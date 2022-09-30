@@ -9,6 +9,7 @@ preview:
             --standalone \
             --template=GitHub.html5 \
             --highlight-style=haddock \
+            --lua-filter=obsidian-filter.lua \
             --toc \
             -o GitHub-Template-Preview.html \
 			src/PREVIEW.md
