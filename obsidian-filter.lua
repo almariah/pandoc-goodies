@@ -1,17 +1,17 @@
 local alert_types =
 {
-  ["alertsolid"] = "Alert",
-  ["warningsolid"] = "Warning",
-  ["errorsolid"] = "Error",
-  ["successsolid"] = "Success",
-  ["notesolid"] = "Note",
+  ["alert_"] = "Alert",
+  ["warning_"] = "Warning",
+  ["error_"] = "Error",
+  ["success_"] = "Success",
+  ["note_"] = "Note",
 }
 
 function BlockQuote (para)
   start = para.content[1]
   if (start.t == "Para" and start.content[1].t == "Str" and
-      start.content[1].text:match("^%[!%w+%][-+]?$")) then
-      _, _, ctype = start.content[1].text:find("%[!(%w+)%]")
+      start.content[1].text:match("^%[!%w+_?%][-+]?$")) then
+      _, _, ctype = start.content[1].text:find("%[!(%w+_?)%]")
 
       tags = string.lower(ctype)
       start.content:remove(1)
@@ -35,7 +35,7 @@ function BlockQuote (para)
 
       blocks = {}
 
-      if (alert_types[tags] ~= nil) then
+      if (tags:sub(-1) == "_") then
         table.insert(blocks, pandoc.RawInline(
             'html',string.format('<div class="%s">', alert_types[tags])    
           )
