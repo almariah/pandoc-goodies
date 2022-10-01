@@ -44,12 +44,13 @@ $--| GitHub HTML5 Pandoc Template" v2.2 | 2020/08/12 | pandoc v2.1.1
     $endfor$
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
       crossorigin="anonymous"
     />
   </head>
+
   <body>
+
     $if(masthead-title)$
     <div class="masthead">
       <div role="banner" class="banner">
@@ -60,7 +61,7 @@ $--| GitHub HTML5 Pandoc Template" v2.2 | 2020/08/12 | pandoc v2.1.1
     $endif$
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav-topNav">
-      <div class="container stdWidth" style="padding-left:0">
+      <div class="container-lg stdWidth" style="padding-left:0">
         <a class="navbar-brand" href="/">Home</a>
         <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#div-collapsibleNav" aria-expanded="false">
           <span class="navbar-toggler-icon"></span>
@@ -80,37 +81,31 @@ $--| GitHub HTML5 Pandoc Template" v2.2 | 2020/08/12 | pandoc v2.1.1
       </div>
     </nav>
 
-    <article class="markdown-body">
+    <article>
       <div class="container-fluid">
-        <div class="row">
-          <div class="col">
-            <div class="title-section">
-              $for(include-before)$
-              $include-before$
-              $endfor$
-              $if(title)$
-              <header>
-                <h1 class="title$if(subtitle)$ followed-by-subtitle$endif$">$title$</h1>
-                $if(subtitle)$
-                <p class="subtitle">$subtitle$</p>
-                $endif$
-                $for(author)$
-                <p class="author">$author$</p>
-                $endfor$
-                $if(date)$
-                <p class="date">$date$</p>
-                $endif$
-                $if(summary)$
-                <div class="summary">
-                  $summary$
-                </div>
-                $endif$
-              </header>
-              $endif$
-            </div>
+        
+        <div class="title-section">
+          $for(include-before)$
+          $include-before$
+          $endfor$
+          $if(title)$
+          <header>
+            <h1 class="title$if(subtitle)$ followed-by-subtitle$endif$">$title$</h1>
+            $if(date)$
+            <p class="meta">
+              <time datetime="2014-03-10T15:00:00.000Z">$date$</time>
+            </p>
+            $endif$
+          </header>
+          $if(summary)$
+          <div class="summary">
+            $summary$
           </div>
+          $endif$
+          $endif$
         </div>
-        <div class="row">
+
+        <div class="row markdown-body">
           <div class="col-3">
             <div class="sidebar-section">
               <div class="sidebar-item sticky-top">
@@ -134,7 +129,12 @@ $--| GitHub HTML5 Pandoc Template" v2.2 | 2020/08/12 | pandoc v2.1.1
             </div>
           </div>
         </div>
+
       </div>
     </article>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/js/dist/collapse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/js/dist/util.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
   </body>
 </html>
