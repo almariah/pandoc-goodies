@@ -42,43 +42,99 @@ $--| GitHub HTML5 Pandoc Template" v2.2 | 2020/08/12 | pandoc v2.1.1
     $for(header-includes)$
     $header-includes$
     $endfor$
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <article class="markdown-body">
-      $for(include-before)$
-      $include-before$
-      $endfor$
-      $if(title)$
-      <header>
-        <h1 class="title$if(subtitle)$ followed-by-subtitle$endif$">$title$</h1>
-        $if(subtitle)$
-        <p class="subtitle">$subtitle$</p>
-        $endif$
-        $for(author)$
-        <p class="author">$author$</p>
-        $endfor$
-        $if(date)$
-        <p class="date">$date$</p>
-        $endif$
-        $if(summary)$
-        <div class="summary">
-          $summary$
+    $if(masthead-title)$
+    <div class="masthead">
+      <div role="banner" class="banner">
+        <h1><a href="/">$masthead-title$</a></h1>
+        <h2>$masthead-subtitle$</h2>
+      </div>
+    </div>
+    $endif$
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav-topNav">
+      <div class="container stdWidth" style="padding-left:0">
+        <a class="navbar-brand" href="/">Home</a>
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#div-collapsibleNav" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="div-collapsibleNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/archives">Archives</a>
+              </li>
+            <li><a class="nav-link" href="/about/">About</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="/subscribe/">
+              Subscribe</a>
+            </li>
+          </ul>
         </div>
-        $endif$
-      </header>
-      $endif$
-      $if(toc)$
-      <hr>
-      <nav id="$idprefix$TOC">
-        <h1 class="toc-title">$if(toc-title)$$toc-title$$else$Contents$endif$</h1>
-        $table-of-contents$
-      </nav>
-      <hr>
-      $endif$
-      $body$
-      $for(include-after)$
-      $include-after$
-      $endfor$
+      </div>
+    </nav>
+
+    <article class="markdown-body">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <div class="title-section">
+              $for(include-before)$
+              $include-before$
+              $endfor$
+              $if(title)$
+              <header>
+                <h1 class="title$if(subtitle)$ followed-by-subtitle$endif$">$title$</h1>
+                $if(subtitle)$
+                <p class="subtitle">$subtitle$</p>
+                $endif$
+                $for(author)$
+                <p class="author">$author$</p>
+                $endfor$
+                $if(date)$
+                <p class="date">$date$</p>
+                $endif$
+                $if(summary)$
+                <div class="summary">
+                  $summary$
+                </div>
+                $endif$
+              </header>
+              $endif$
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <div class="sidebar-section">
+              <div class="sidebar-item sticky-top">
+                <div class="sidebar-content">
+                  $if(toc)$
+                  <nav id="$idprefix$TOC">
+                    <h4 class="toc-title">$if(title)$$title$$else$Contents$endif$</h4>
+                    $table-of-contents$
+                  </nav>
+                  $endif$
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-7">
+            <div class="content-section">
+              $body$
+              $for(include-after)$
+              $include-after$
+              $endfor$
+            </div>
+          </div>
+        </div>
+      </div>
     </article>
   </body>
 </html>
