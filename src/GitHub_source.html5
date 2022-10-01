@@ -1,119 +1,84 @@
 $--| GitHub HTML5 Pandoc Template" v2.2 | 2020/08/12 | pandoc v2.1.1
 <!DOCTYPE html>
-
-$-------------------------------------------------------------------------> lang
 <html$if(lang)$ lang="$lang$"$endif$$if(dir)$ dir="$dir$"$endif$>
-<head>
-$--=============================================================================
-$--                                METADATA
-$--=============================================================================
-  <meta charset="$if(charset)$$charset$$else$utf-8$endif$" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-$-----------------------------------------------------------------------> author
-$for(author-meta)$
-  <meta name="author" content="$author-meta$" />
-$endfor$
-$-------------------------------------------------------------------------> date
-$if(date-meta)$
-  <meta name="dcterms.date" content="$date-meta$" />
-$endif$
-$---------------------------------------------------------------------> keywords
-$if(keywords)$
-  <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$" />
-$endif$
-$------------------------------------------------------------------> description
-$if(description)$
-  <meta name="description" content="$description$">
-$endif$
-$------------------------------------------------------------------------> title
-  <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
-$--===========================================================================
-$--                            CSS STYLESHEETS
-$--===========================================================================
-$-- Here comes the placeholder (within double braces) that will be replaced
-$-- by the CSS file in the finalized template:
-  <style type="text/css">
-{{CSS-INJECT}}
-  </style>
-$-------------------------------------------------------------------------------
-  <style type="text/css">code{white-space: pre;}</style>
-$-------------------------------------------------------------------------------
-$if(quotes)$
-  <style type="text/css">q { quotes: "“" "”" "‘" "’"; }</style>
-$endif$
-$-------------------------------------------------------------> highlighting-css
-$if(highlighting-css)$
-  <style type="text/css">
-$highlighting-css$
-  </style>
-$endif$
-$--------------------------------------------------------------------------> css
-$for(css)$
-  <link rel="stylesheet" href="$css$">
-$endfor$
-$-------------------------------------------------------------------------> math
-$if(math)$
-  $math$
-$endif$
-$-------------------------------------------------------------------------------
-  <!--[if lt IE 9]>
+  <head>
+    <meta charset="$if(charset)$$charset$$else$utf-8$endif$" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    $for(author-meta)$
+    <meta name="author" content="$author-meta$" />
+    $endfor$
+    $if(date-meta)$
+    <meta name="dcterms.date" content="$date-meta$" />
+    $endif$
+    $if(keywords)$
+    <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$" />
+    $endif$
+    $if(description)$
+    <meta name="description" content="$description$">
+    $endif$
+    <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
+    <style type="text/css">
+      {{CSS-INJECT}}
+    </style>
+    <style type="text/css">code{white-space: pre;}</style>
+    $if(quotes)$
+    <style type="text/css">q { quotes: "“" "”" "‘" "’"; }</style>
+    $endif$
+    $if(highlighting-css)$
+    <style type="text/css">
+      $highlighting-css$
+    </style>
+    $endif$
+    $for(css)$
+    <link rel="stylesheet" href="$css$">
+    $endfor$
+    $if(math)$
+    $math$
+    $endif$
+    <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
-$--------------------------------------------------------------> header-includes
-$for(header-includes)$
-  $header-includes$
-$endfor$
-$-------------------------------------------------------------------------------
-</head>
-<body>
-<article class="markdown-body">
-$---------------------------------------------------------------> include-before
-$for(include-before)$
-$include-before$
-$endfor$
-$-->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> IF: title
-$if(title)$
-<header>
-<h1 class="title$if(subtitle)$ followed-by-subtitle$endif$">$title$</h1>
-$---------------------------------------------------------------------> subtitle
-$if(subtitle)$
-<p class="subtitle">$subtitle$</p>
-$endif$
-$-----------------------------------------------------------------------> author
-$for(author)$
-<p class="author">$author$</p>
-$endfor$
-$-------------------------------------------------------------------------> date
-$if(date)$
-<p class="date">$date$</p>
-$endif$
-$----------------------------------------------------------------------> summary
-$if(summary)$
-<div class="summary">
-$summary$
-</div>
-$endif$
-$-------------------------------------------------------------------------------
-</header>
-$endif$
-$--<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< END IF: title
-$--------------------------------------------------------------------------> toc
-$if(toc)$
-<hr>
-<nav id="$idprefix$TOC">
-<h1 class="toc-title">$if(toc-title)$$toc-title$$else$Contents$endif$</h1>
-$table-of-contents$
-</nav>
-<hr>
-$endif$
-$-------------------------------------------------------------------------> body
-$body$
-$----------------------------------------------------------------> include-after
-$for(include-after)$
-$include-after$
-$endfor$
-$-------------------------------------------------------------------------------
-</article>
-</body>
+    <![endif]-->
+    $for(header-includes)$
+    $header-includes$
+    $endfor$
+  </head>
+  <body>
+    <article class="markdown-body">
+      $for(include-before)$
+      $include-before$
+      $endfor$
+      $if(title)$
+      <header>
+        <h1 class="title$if(subtitle)$ followed-by-subtitle$endif$">$title$</h1>
+        $if(subtitle)$
+        <p class="subtitle">$subtitle$</p>
+        $endif$
+        $for(author)$
+        <p class="author">$author$</p>
+        $endfor$
+        $if(date)$
+        <p class="date">$date$</p>
+        $endif$
+        $if(summary)$
+        <div class="summary">
+          $summary$
+        </div>
+        $endif$
+      </header>
+      $endif$
+      $if(toc)$
+      <hr>
+      <nav id="$idprefix$TOC">
+        <h1 class="toc-title">$if(toc-title)$$toc-title$$else$Contents$endif$</h1>
+        $table-of-contents$
+      </nav>
+      <hr>
+      $endif$
+      $body$
+      $for(include-after)$
+      $include-after$
+      $endfor$
+    </article>
+  </body>
 </html>
