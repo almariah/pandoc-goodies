@@ -1,0 +1,179 @@
+$--| GitHub HTML5 Pandoc Template" v2.2 | 2020/08/12 | pandoc v2.1.1
+<!DOCTYPE html>
+<html$if(lang)$ lang="$lang$"$endif$$if(dir)$ dir="$dir$"$endif$>
+  <head>
+    <meta charset="$if(charset)$$charset$$else$utf-8$endif$" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    $for(author-meta)$
+    <meta name="author" content="$author-meta$" />
+    $endfor$
+    $if(date-meta)$
+    <meta name="dcterms.date" content="$date-meta$" />
+    $endif$
+    $if(keywords)$
+    <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$" />
+    $endif$
+    $if(description)$
+    <meta name="description" content="$description$">
+    $endif$
+    <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
+    <style type="text/css">
+      {{CSS-INJECT}}
+    </style>
+    <style type="text/css">code{white-space: pre;}</style>
+    $if(quotes)$
+    <style type="text/css">q { quotes: "“" "”" "‘" "’"; }</style>
+    $endif$
+    $if(highlighting-css)$
+    <style type="text/css">
+      $highlighting-css$
+    </style>
+    $endif$
+    $for(css)$
+    <link rel="stylesheet" href="$css$">
+    $endfor$
+    $if(math)$
+    $math$
+    $endif$
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+    $for(header-includes)$
+    $header-includes$
+    $endfor$
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      crossorigin="anonymous"
+    />
+    <script src="jquery-3.6.1.min.js"></script>
+  </head>
+
+  <body>
+
+    $if(masthead-title)$
+    <div class="masthead">
+      <div class="banner">
+        <h1><a href="/">$masthead-title$</a></h1>
+        <h2>$masthead-subtitle$</h2>
+      </div>
+    </div>
+    $endif$
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav-topNav">
+      <div class="container-fluid stdWidth" style="padding-left:0">
+        <a class="navbar-brand" href="/">Home</a>
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#div-collapsibleNav" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="div-collapsibleNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/archives.html">Archives</a>
+              </li>
+            <li><a class="nav-link" href="/about/">About</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="/subscribe/">
+              Subscribe</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <article>
+      <div class="container-fluid">
+
+            <div class="row justify-content-end justify-content-sm-center justify-content-md-center justify-content-lg-end">
+
+              <div class="col-sm-12 col-lg-3 col-xl-3 d-flex flex-column justify-content-between">
+                  <div class="sticky-top">
+                    <div class="sidebar-content markdown-body">
+                      $if(toc)$
+                      <nav id="$idprefix$TOC">
+                        <h4 class="toc-title">$if(title)$$title$$else$Contents$endif$</h4>
+                        $table-of-contents$
+                      </nav>
+                      $endif$
+                    </div>
+                  </div>
+              </div>
+            
+            
+              <div id="blog-content" class="col-lg-8 col-xl-7">
+                <div class="content-section markdown-body">
+                  
+                  $for(include-before)$
+                  $include-before$
+                  $endfor$
+                  $if(title)$
+                  <header>
+                    <h1 class="title">$title$</h1>
+                    $if(date)$
+                    <p class="meta">
+                      <time datetime="2014-03-10T15:00:00.000Z">$date$</time>
+                    </p>
+                    $endif$
+                  </header>
+                  $if(summary)$
+                  <div class="summary">
+                    $summary$
+                  </div>
+                  $endif$
+                  $endif$
+
+                  $body$
+                  $for(include-after)$
+                  $include-after$
+                  $endfor$
+                </div>
+                
+                <hr>
+              </div>
+
+              
+
+              <div class="col-sm-8 col-md-8 col-lg-8 col-xl-2">
+
+
+                <aside class="other-posts">
+                  $if(other-posts)$
+                  <section class="card">
+                    <div class="card-header">
+                      Other Posts
+                    </div>
+
+                    <div id="other_posts" class="list-group list-group-flush">
+
+                      $for(other-posts)$
+                      <a class="list-group-item " href="$other-posts.href$">$other-posts.title$</a>
+                      $endfor$
+                      
+                    </div>
+                  </section>
+                  $endif$
+                  $if(author)$
+                  <div class="author">
+                      <a href="$author-link$" title="about">
+                          <img class="author-img" src="author.jpg">
+                          <div>$author$</div>
+                      </a>
+                  </div>
+                  $endif$
+                </aside>
+                
+              </div>
+
+            </div>
+            
+
+      </div>
+    </article>
+
+  <div id="footer">
+    $if(copyright)$
+    <p>$copyright$</p>
+    $endif$
+  </div>
+</html>

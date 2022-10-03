@@ -7,9 +7,9 @@ preview:
 	pandoc  -f markdown \
             -t html5 \
             --standalone \
-            --template=GitHub.html5 \
+            --template=github-blog.html \
             --highlight-style=haddock \
             --lua-filter=obsidian-filter.lua \
             --toc \
-            -o GitHub-Template-Preview.html \
-			src/PREVIEW.md
+            -o preview.html \
+			src/preview.md

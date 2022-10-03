@@ -11,9 +11,6 @@
   word-wrap: break-word;
   box-sizing: border-box;
   min-width: 200px;
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 45px;
 }
 .markdown-body a {
   color: #0366d6;
@@ -749,9 +746,6 @@
 h1.title,
 p.subtitle {
   text-align: left;
-}
-
-h1.title.followed-by-subtitle {
   margin-bottom: 0;
 }
 
@@ -768,4 +762,166 @@ div.line-block {
   white-space: pre-line;
 }
 
-/*# sourceMappingURL=GitHub.css.map */
+.summary {
+  font-size: 17px;
+}
+
+.masthead {
+  color: #f2f2f2;
+  font-family: "PT Serif", serif;
+  background-color: #222;
+  padding: 0.5rem 1rem;
+}
+
+.masthead h1 {
+  font-size: 2.8rem;
+}
+
+.masthead h2 {
+  font-size: 1.5rem;
+  color: #aaa;
+}
+
+.masthead a {
+  color: inherit;
+}
+
+.masthead a:hover, .masthead a:focus {
+  text-decoration: none;
+  color: #f2f2f2;
+}
+
+.title-section {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10px;
+}
+
+.sidebar-content {
+  height: 100%;
+  margin-bottom: 3rem;
+  font-size: 1rem;
+  padding-top: 1rem;
+}
+
+nav#TOC {
+  overflow-y: scroll;
+  max-height: 95vh;
+}
+
+.navbar .container, .navbar .container-lg, .navbar .container-md, .navbar .container-sm, .navbar .container-xl {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+article header {
+  border-left: 4px solid #c7254e;
+  padding-left: 6px;
+}
+
+article header p {
+  max-width: 100%;
+  color: gray;
+}
+
+article h1 {
+  margin-top: 0;
+  font-weight: bold;
+  font-family: "PT Serif", serif;
+  font-size: 32px;
+}
+
+article div.inner, article table, article form,
+article header, .stdWidth, article > .entry-content > * {
+  max-width: 760px;
+  margin-right: auto;
+}
+
+.masthead .banner {
+  margin-left: 1rem;
+}
+
+article p {
+  margin: 0 auto 22px auto;
+  line-height: 26px;
+}
+
+#nav-topNav {
+  border-bottom: 1px solid #e7e7e7;
+  padding: 0.3rem 1rem;
+  margin-bottom: 1rem;
+}
+
+#nav-topNav a {
+  transition: color 0.3s ease 0s, text-decoration 0.3s ease 0s, background 0.3s ease 0s;
+  padding-right: 1rem;
+}
+
+#nav-topNav a:hover,
+#nav-topNav li > a:focus {
+  color: #c7254e;
+}
+
+.other-posts {
+  padding-top: 1rem;
+  font-size: 1rem;
+  padding-top: 24px;
+  padding-left: 0px;
+  padding-bottom: 45px;
+  padding-right: 24px;
+}
+
+.other-posts a {
+  color: #555;
+  text-decoration: none;
+}
+
+.other-posts .list-group-item:hover,
+.other-posts .list-group-item:focus {
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-color: #ddd;
+  text-decoration: none;
+}
+
+#footer {
+  text-align: center;
+  background-color: #222;
+  color: #aaa;
+  padding: 1rem;
+}
+
+#footer p {
+  margin: 0;
+  line-height: 1rem;
+}
+
+#footer a, #footer a:hover {
+  color: inherit;
+}
+
+.author-img {
+  width: 128px;
+  display: block;
+  margin-top: 40px;
+  margin-bottom: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 50%;
+}
+
+.author {
+  text-align: center;
+}
+
+.author a:hover, .author a:focus {
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=github.css.map */

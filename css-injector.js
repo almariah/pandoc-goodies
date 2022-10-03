@@ -1,6 +1,6 @@
-templateFile  = "src/GitHub_source.html5" // Template with CSS-injection placeholder
-cssFile       = "src/GitHub.min.css"      // CSS source to inject into placeholder
-outFile       = "GitHub.html5"     // Final template output file
+templateFile  = "src/github-blog-source.html" // Template with CSS-injection placeholder
+cssFile       = "src/github.min.css"      // CSS source to inject into placeholder
+outFile       = "github-blog.html"     // Final template output file
 placeHolder   = "{{CSS-INJECT}}"      // Placeholder string for CSS-injection
 
 var fs = require('fs')

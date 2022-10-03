@@ -4,8 +4,8 @@
     "sass": "^1.55.0"
   },
   "scripts": {
-    "sass": "sass --source-map --style=expanded src/GitHub.scss:src/GitHub.css",
-    "cleancss": "cleancss -O2 src/GitHub.css -o src/GitHub.min.css",
+    "sass": "sass --source-map --style=expanded src/github.scss:src/github.css",
+    "cleancss": "cleancss -O2 src/github.css -o src/github.min.css",
     "css-injector": "node css-injector.js"
   }
 }
