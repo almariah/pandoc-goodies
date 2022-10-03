@@ -12,4 +12,4 @@ preview:
             --lua-filter=obsidian-filter.lua \
             --toc \
             -o preview.html \
-			src/preview.md
+			preview.md
